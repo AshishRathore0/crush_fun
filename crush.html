@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hey You 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 4px #00000050;
+      text-align: center;
+    }
+
+    .heart {
+      font-size: 5em;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .btns {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .yes-btn {
+      background-color: #ff4e94;
+      color: white;
+      box-shadow: 0 5px 15px rgba(255, 78, 148, 0.5);
+    }
+
+    .yes-btn:hover {
+      background-color: #ff2e7e;
+    }
+
+    .maybe-btn {
+      background-color: #fff;
+      color: #ff4e94;
+      border: 2px solid #ff4e94;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">💖</div>
+  <h1>Hi Ayushi Singh,</h1>
+  <h1>Someone has a little crush on you...</h1>
+
+  <div class="btns">
+    <button class="yes-btn">Yes!</button>
+    <button class="maybe-btn" id="maybeBtn">Maybe?</button>
+  </div>
+
+  <script>
+    const maybeBtn = document.getElementById('maybeBtn');
+
+    maybeBtn.addEventListener('mouseover', () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 100));
+      maybeBtn.style.position = 'absolute';
+      maybeBtn.style.left = `${x}px`;
+      maybeBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
